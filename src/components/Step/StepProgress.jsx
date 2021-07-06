@@ -1,17 +1,9 @@
-import styled, {css} from "styled-components";
+import styled from "styled-components";
 
 const StepperProgressWrapper = styled.div`
-  position: absolute;
-  top: 15px;
   width: 100%;
   z-index: 9;
-`;
-
-const Wrapper = styled.div`
-  width: 90%;
-  position: relative;
   display: flex;
-  margin: auto;
   justify-content: space-between;
 `;
 
@@ -21,10 +13,20 @@ const StepTitle = styled.div`
   align-items: center;
   background: #fff;
   padding: 0 1rem;
-  height: 30px;
 `;
 
 const StepTitleNumber = styled.div`
+  font-size: 1rem;
+  background: #ceeeff;
+  height: 24px;
+  width: 24px;
+  margin: 0.3rem auto;
+  line-height: 1.5;
+  border: 3px solid #fff;
+  border-radius: 100%;
+`;
+
+const StepperProgressBar = styled.div`
   position: absolute;
   width: 100%;
   height: 3px;
@@ -32,12 +34,7 @@ const StepTitleNumber = styled.div`
   z-index: -1;
   background: #e91e63;
   transition: width 1s cubic-bezier(0.23, 1, 0.32, 1) 0s;
-`;
-
-const StepperProgressBar = styled.div`
-  ${props => props.width && css`
-    width: ${props.width}%;
-  `}
+  width: ${props => props.width}%;
 `;
 
 const StepperProgress = ({ stepTitles, currentStep }) => {
@@ -46,16 +43,14 @@ const StepperProgress = ({ stepTitles, currentStep }) => {
 
   return (
     <StepperProgressWrapper>
-      <Wrapper>
-        <StepperProgressBar width={progress} />
+      <StepperProgressBar width={progress} />
 
-        {stepTitles.map((title, i) => (
-          <StepTitle>
-            <StepTitleNumber>{i + 1}</StepTitleNumber>
-            {title}
-          </StepTitle>
-        ))}
-      </Wrapper>
+      {stepTitles.map((title, i) => (
+        <StepTitle>
+          <StepTitleNumber>{i + 1}</StepTitleNumber>
+          {title}
+        </StepTitle>
+      ))}
     </StepperProgressWrapper>
   );
 };

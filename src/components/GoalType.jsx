@@ -31,7 +31,7 @@ const GoalTypeContainer = styled.a`
 
 `;
 
-const GoalType = ({ type }) => {
+const GoalType = ({ type, goNextStep }) => {
 
   const renderComponentIcon = (type) => {
     switch (type) {
@@ -43,14 +43,21 @@ const GoalType = ({ type }) => {
     }
   }
 
+  const linkOnClick = (e) => {
+    e.preventDefault();
+    goNextStep()
+  }
+
   return (
-    <GoalTypeContainer href="" alia-label={type}>
+    <>
+      <GoalTypeContainer href="" alia-label={type} onClick={linkOnClick}>
 
-      {renderComponentIcon(type)}
+        {renderComponentIcon(type)}
 
-      <span class="label">{type.replace(/-/g, " ")}</span>
+        <span class="label">{type.replace(/-/g, " ")}</span>
 
-    </GoalTypeContainer>
+      </GoalTypeContainer>
+    </>
   )
 }
 

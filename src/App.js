@@ -12,7 +12,7 @@ function App() {
         steps={[
           {
             title: "I'm the step 1",
-            element: (stepProps) => <GoalTypes types={["retirement","major-purchase","education" ]} {...stepProps}/>,
+            element: (stepProps) => <GoalTypes types={["retirement","major-purchase","education","build-wealth"]} {...stepProps}/>,
           },
           {
             title: "I'm the step 2",

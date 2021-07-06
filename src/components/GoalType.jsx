@@ -54,7 +54,7 @@ const GoalType = ({ type, goNextStep }) => {
 
         {renderComponentIcon(type)}
 
-        <span class="label">{type.replace(/-/g, " ")}</span>
+        <span className="label">{type.replace(/-/g, " ")}</span>
 
       </GoalTypeContainer>
     </>

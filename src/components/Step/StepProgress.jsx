@@ -37,18 +37,17 @@ const StepperProgressBar = styled.div`
   width: ${props => props.width}%;
 `;
 
-const StepperProgress = ({ stepTitles, currentStep }) => {
-  const progressPerStep = 100 / (stepTitles.length - 1);
+const StepperProgress = ({ stepsLength, currentStep }) => {
+  const progressPerStep = 100 / (stepsLength - 1);
   const progress = (currentStep - 1) * progressPerStep;
 
   return (
     <StepperProgressWrapper>
       <StepperProgressBar width={progress} />
 
-      {stepTitles.map((title, i) => (
+      {[...Array(stepsLength).keys()].map((title, i) => (
         <StepTitle>
           <StepTitleNumber>{i + 1}</StepTitleNumber>
-          {title}
         </StepTitle>
       ))}
     </StepperProgressWrapper>

@@ -65,7 +65,7 @@ export const Stepper = ({ steps, showStepNumbers }) => {
   return (
     <StepperComponent>
       {showStepNumbers && <StepProgress
-        stepTitles={steps.map(step => step.title)}
+        stepsLength={steps.length}
         currentStep={currentStep}
       />}
       

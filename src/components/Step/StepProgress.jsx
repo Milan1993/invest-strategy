@@ -30,11 +30,20 @@ const StepperProgressBar = styled.div`
   position: absolute;
   width: 100%;
   height: 3px;
-  top: 13px;
+  top: 17px;
   z-index: -1;
   background: #e91e63;
   transition: width 1s cubic-bezier(0.23, 1, 0.32, 1) 0s;
   width: ${props => props.width}%;
+`;
+
+const OL = styled.ol`
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 `;
 
 const StepperProgress = ({ stepsLength, currentStep }) => {
@@ -45,11 +54,16 @@ const StepperProgress = ({ stepsLength, currentStep }) => {
     <StepperProgressWrapper>
       <StepperProgressBar width={progress} />
 
-      {[...Array(stepsLength).keys()].map((title, i) => (
-        <StepTitle>
-          <StepTitleNumber>{i + 1}</StepTitleNumber>
-        </StepTitle>
-      ))}
+      <OL>
+        {[...Array(stepsLength).keys()].map((title, i) => (
+          <li key={i}>
+          
+            <StepTitle>
+              <StepTitleNumber>{i + 1}</StepTitleNumber>
+            </StepTitle>
+          </li>
+        ))}
+      </OL>
     </StepperProgressWrapper>
   );
 };

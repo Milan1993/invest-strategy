@@ -14,15 +14,23 @@ const H1 = styled.h1`
   color: #161A25;
 `;
 
+const UL = styled.ul`
+  list-style: none;
+  display: flex;
+  padding: 0;
+`;
+
 const GoalTypes = ({ types, goNextStep }) => {
   return (
     <GoalTypesWrapper>
       <H1>Please select a goal.</H1>
-      <div>
+      <UL>
         {types.map((type, i) => (
-          <GoalType key={i} type={type} goNextStep={goNextStep}/>
+          <li key={i}>
+            <GoalType type={type} goNextStep={goNextStep}/>
+          </li>
         ))}
-      </div>
+      </UL>
     </GoalTypesWrapper>
   )
 }

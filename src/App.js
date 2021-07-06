@@ -9,6 +9,7 @@ function App() {
       <header className="App-header"></header>
       <Stepper
         showStepNumbers
+        showPrevNext
         steps={[
           { element: (stepProps) => <GoalTypes types={["retirement", "major-purchase", "education", "build-wealth"]} {...stepProps} /> },
           { element: (stepProps) => <GoalType type="major-purchase" {...stepProps} /> },

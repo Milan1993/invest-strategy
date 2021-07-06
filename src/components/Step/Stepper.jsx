@@ -4,16 +4,18 @@ import StepProgress from './StepProgress';
 import Button from "../Button";
 
 const StepperComponent = styled.div`
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 80px;
   width: 100%;
   height: 600px;
-  position: relative;
+  box-sizing: border-box;
+  margin: 20px 0;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px,
     rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
-  flex-direction: column;
-  gap: 80px;
-  display: inline-flex;
-  justify-content: space-between;
   background-color: #fafafa;
 `;
 
@@ -25,7 +27,6 @@ const StepperSelector = styled.div`
   /* Animate each step movement */
   transition: transform 1s cubic-bezier(0.23, 1, 0.32, 1) 0s;
   align-items: flex-end;
-  padding: 10px;
 `;
 
 const StepWrapper = styled.div`

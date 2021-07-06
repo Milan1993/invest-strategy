@@ -5,6 +5,7 @@ const StepperProgressWrapper = styled.div`
   z-index: 9;
   display: flex;
   justify-content: space-between;
+  position: relative;
 `;
 
 const StepTitle = styled.div`

@@ -15,6 +15,7 @@ const GoalTypeContainer = styled.a`
   justify-content: center;
   color: #9cb1cd;
   text-decoration: none;
+  background-color: #ffffff;
 
   svg {
     width: 81px;

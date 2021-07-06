@@ -14,6 +14,7 @@ const StepperComponent = styled.div`
   gap: 80px;
   display: inline-flex;
   justify-content: space-between;
+  background-color: #fafafa;
 `;
 
 const StepperSelector = styled.div`

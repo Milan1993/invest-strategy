@@ -18,6 +18,7 @@ const UL = styled.ul`
   list-style: none;
   display: flex;
   padding: 0;
+  gap: 10px;
 `;
 
 const GoalTypes = ({ types, goNextStep }) => {

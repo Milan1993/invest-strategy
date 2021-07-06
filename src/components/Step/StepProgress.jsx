@@ -11,7 +11,7 @@ const StepTitle = styled.div`
   text-align: center;
   font-size: 0.7rem;
   align-items: center;
-  background: #fff;
+  background: #fafafa;;
   padding: 0 1rem;
 `;
 

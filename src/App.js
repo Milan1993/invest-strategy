@@ -1,14 +1,15 @@
 import GoalType from "./components/GoalType";
 import GoalTypes from "./components/GoalTypes";
 import { Stepper } from "./components/Step/Stepper";
+import Header from "./components/Header";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <Header />
       <Stepper
-        showStepNumbers
+        showNavigation
         showPrevNext
         steps={[
           { element: (stepProps) => <GoalTypes types={["retirement", "major-purchase", "education", "build-wealth"]} {...stepProps} /> },

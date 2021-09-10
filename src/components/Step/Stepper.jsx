@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from 'styled-components';
 import StepProgress from './StepProgress';
+import StepperNavigation from './StepperNavigation';
 import Button from "../Button";
 
 const StepperComponent = styled.div`
@@ -12,11 +13,12 @@ const StepperComponent = styled.div`
   width: 100%;
   height: 600px;
   box-sizing: border-box;
-  margin: 20px 0;
+  margin: 0 0 20px 0;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px,
     rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
   background-color: #fafafa;
+  border-top: 1px solid #9CB1CD;
 `;
 
 const StepperSelector = styled.div`
@@ -49,7 +51,7 @@ const RestartLink = styled.a`
   text-transform: uppercase;
 `;
 
-export const Stepper = ({ steps, showStepNumbers, showPrevNext }) => {
+export const Stepper = ({ steps, showNavigation, showStepNumbers, showPrevNext }) => {
   const [currentStep, setCurrentStep] = useState(1);
   const stepperSelector = useRef(null);
   // Every time our currentStep is updated, we are going to trigger this
@@ -85,6 +87,7 @@ export const Stepper = ({ steps, showStepNumbers, showPrevNext }) => {
     <StepperComponent>
       <div>
         <RestartLink href="" onClick={goToFirstStep}>Restart questionnaire</RestartLink>
+        {showNavigation && <StepperNavigation stepsLength={steps.length} currentStep={currentStep}/>}
         {showStepNumbers && <StepProgress stepsLength={steps.length} currentStep={currentStep} />}
       </div>
       

@@ -7,7 +7,7 @@ const StepperComponent = styled.div`
   position: relative;
   display: inline-flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 80px;
   width: 100%;
   height: 600px;
@@ -38,6 +38,15 @@ const StepWrapper = styled.div`
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
+  margin-top: auto;
+`;
+
+const RestartLink = styled.a`
+  text-decoration: none;
+  color: #00B0FB;
+  font-weight: 600;
+  line-height: 19px;
+  text-transform: uppercase;
 `;
 
 export const Stepper = ({ steps, showStepNumbers, showPrevNext }) => {
@@ -62,6 +71,8 @@ export const Stepper = ({ steps, showStepNumbers, showPrevNext }) => {
     }
   };
 
+  const goToFirstStep = () => setCurrentStep(1);
+
   const moveStepper = () => {
     if (stepperSelector.current) {
       const stepper = stepperSelector.current;
@@ -72,7 +83,10 @@ export const Stepper = ({ steps, showStepNumbers, showPrevNext }) => {
 
   return (
     <StepperComponent>
-      {showStepNumbers && <StepProgress stepsLength={steps.length} currentStep={currentStep} />}
+      <div>
+        <RestartLink href="" onClick={goToFirstStep}>Restart questionnaire</RestartLink>
+        {showStepNumbers && <StepProgress stepsLength={steps.length} currentStep={currentStep} />}
+      </div>
       
       <StepperSelector ref={stepperSelector}>
         {steps.map((step, i) => (

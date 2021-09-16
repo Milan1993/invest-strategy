@@ -1,17 +1,28 @@
 import GoalType from "./components/GoalType";
 import GoalTypes from "./components/GoalTypes";
 import GoalTypeNew from "./components/GoalTypeNew";
+import GoalSettings from "./components/GoalSettings/GoalSettings";
+import Strategy from "./components/Strategy";
 import { Stepper } from "./components/Step/Stepper";
 import Header from "./components/Header";
 import "./App.css";
+import GlobalStyle from './theme/globalStyles';
+import { ThemeProvider } from "styled-components";
+import theme from "./theme/theme";
+import Backdrop from './components/Backdrop';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header"></header>
-      <GoalTypeNew linkText="Retirement"/>
-      <Header />
-      <Stepper
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <div className="App">
+        <header className="App-header"></header>
+        {/* <GoalTypeNew linkText="Retirement"/> */}
+        {/* <GoalSettings /> */}
+        <Backdrop />
+        <Strategy isRecommended blendedStrategies={['Fact-Based Strategies','Market Gaude Strategies']}/>
+        {/* <Header /> */}
+        {/* <Stepper
         showNavigation
         showPrevNext
         steps={[
@@ -19,12 +30,11 @@ function App() {
           { element: (stepProps) => <GoalType type="major-purchase" {...stepProps} /> },
           { element: (stepProps) => <GoalType type="education" {...stepProps} /> },
           { element: (stepProps) => <GoalType type="education" {...stepProps} /> },
-        ]}
-      />
-    </div>
+        ]} */}
+        {/* /> */}
+      </div>
+    </ThemeProvider>
   );
 }
-
-
 
 export default App;

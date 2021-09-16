@@ -4,7 +4,7 @@ import { ReactComponent as MajorPurchaseIcon } from '../assets/major-purchase.sv
 import { ReactComponent as EducationIcon } from '../assets/education.svg';
 import { ReactComponent as BuildWealthIcon } from '../assets/build-wealth.svg';
 
-const GoalTypeContainer = styled.a`
+const Wrapper = styled.a`
   outline: 1px solid #9cb1cd;
   width: 200px;
   height: 200px;
@@ -51,13 +51,13 @@ const GoalType = ({ type, goNextStep }) => {
 
   return (
     <>
-      <GoalTypeContainer href="" alia-label={type} onClick={linkOnClick}>
+      <Wrapper href="" alia-label={type} onClick={linkOnClick}>
 
         {renderComponentIcon(type)}
 
         <span className="label">{type.replace(/-/g, " ")}</span>
 
-      </GoalTypeContainer>
+      </Wrapper>
     </>
   )
 }

@@ -6,8 +6,8 @@ const Wrapper = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--color-gray-900);
-  z-index: 5;
+  z-index: 100;
+  background-color: var(--color-backdrop);
 `;
 
 function Backdrop({ opacity, color, children }) {

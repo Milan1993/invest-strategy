@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useState } from 'react';
+import useToggle from '../hooks/useToggle';
 import SelectButton from './SelectButton';
 import Card from './Card';
 
@@ -36,21 +37,22 @@ const Span = styled.span`
 `;
 
 interface Props {
-  isRecommended: boolean,
-  blendedStrategies: string[]
+  isRecommended?: boolean,
+  blendedStrategies?: string[]
 }
 
 const Strategy = ({ isRecommended, blendedStrategies }: Props) => {
-  const [ isSelected, setIsSelected ] = useState(false);
+  const [ toggle, toggleValue ] = useToggle(false);
+
   return (
-    <Wrapper className={isSelected ? "selected" : ''}>
+    <Wrapper className={toggle ? "selected" : ''}>
       {isRecommended && <Span>Recommended:</Span>}
       <h3>CMS Institutional <br/>Featuring Fact-Based Strategies</h3>
-      {blendedStrategies.map(stgy => <p>Icon {stgy}</p>)}
+      {blendedStrategies?.map(stgy => <p>Icon {stgy}</p>)}
       <p>Strategies featuring tactical and monumentum based strategist William Sherman.</p>
       <div>
         <a href="">Learn more</a>
-        <SelectButton onClick={() => setIsSelected(!isSelected)}>{ isSelected ? 'Selected' : 'Select'}</SelectButton>
+        <SelectButton onClick={toggleValue}>{ toggle ? 'Selected' : 'Select'}</SelectButton>
       </div>
     </Wrapper>
   );

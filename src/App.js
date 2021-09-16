@@ -19,8 +19,9 @@ function App() {
         <header className="App-header"></header>
         {/* <GoalTypeNew linkText="Retirement"/> */}
         {/* <GoalSettings /> */}
-        <Backdrop />
         <Strategy isRecommended blendedStrategies={['Fact-Based Strategies','Market Gaude Strategies']}/>
+        {/* <Backdrop>
+        </Backdrop> */}
         {/* <Header /> */}
         {/* <Stepper
         showNavigation

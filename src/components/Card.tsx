@@ -1,3 +1,4 @@
+import React, { FC } from 'react';
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -15,7 +16,7 @@ interface Props {
   className: string 
 }
 
-const Card = ({ children, className }: Props) => {
+const Card: FC<Props> = ({ children, className }) => {
   return  <Wrapper className={className}>{children}</Wrapper>;
 };
 

@@ -1,15 +1,16 @@
 import GoalType from "./components/GoalType";
 import GoalTypes from "./components/GoalTypes";
+import React from 'react';
 import GoalTypeNew from "./components/GoalTypeNew";
 import GoalSettings from "./components/GoalSettings/GoalSettings";
 import Strategy from "./components/Strategy";
 import { Stepper } from "./components/Step/Stepper";
 import Header from "./components/Header";
-import "./App.css";
 import GlobalStyle from './theme/globalStyles';
 import { ThemeProvider } from "styled-components";
 import theme from "./theme/theme";
 import Backdrop from './components/Backdrop';
+import RecommendedPortfolioItem from './components/RecommendedPortfolio/RecommendedPortfolioItem'
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
         <header className="App-header"></header>
         {/* <GoalTypeNew linkText="Retirement"/> */}
         {/* <GoalSettings /> */}
-        <Strategy isRecommended blendedStrategies={['Fact-Based Strategies','Market Gaude Strategies']}/>
+        {/* <Strategy isRecommended blendedStrategies={['Fact-Based Strategies','Market Gaude Strategies']}/> */}
+        <RecommendedPortfolioItem title="Market Gauge Nasdaq 100 All Stars" percent={43.33}/>
         {/* <Backdrop>
         </Backdrop> */}
         {/* <Header /> */}

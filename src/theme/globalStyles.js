@@ -13,6 +13,21 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: Open-Sans, Helvetica, Sans-Serif;
+    background-color: #F0F3F4;
+
+    input, select {
+      border: none;
+      margin: 0;
+      
+    }
+
+    input:focus, 
+    select:focus { outline: none; }
+  }
+  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
   }
 `;
 

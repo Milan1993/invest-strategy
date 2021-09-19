@@ -1,7 +1,8 @@
+import React from 'react';
 import styled from 'styled-components';
 import Input from './Input';
 import Select from './Select';
-import Card from '../Card';
+import Card from '../Card.tsx';
 
 const Wrapper = styled(Card)`
   display: flex;

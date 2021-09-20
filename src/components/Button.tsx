@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 
-const Btn = styled.button<Props>`
+const Btn = styled.button<IProps>`
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
@@ -10,14 +10,13 @@ const Btn = styled.button<Props>`
   text-align: center;
   padding: .7em 1.4em;
   color: ${(p) => p.color || 'black'};
-  background: transparent;
+  background: ${(p) => p.bg || 'transparent'};
   border: ${(p) => p.borderWidth || '0px'} solid ${(p) => p.borderColor || 'transparent'};
   border-radius: 5px;
   font-weight: ${(p) => p.fontWeight || 'normal'};
   font-size: ${(p) => p.fontSize || '1em'};
   white-space: nowrap;
   text-rendering: optimizeLegibility;
-  letter-spacing: 1px;
 
   &[disabled] {
     opacity: 0.75;
@@ -38,11 +37,22 @@ const Btn = styled.button<Props>`
     width: 35px;
     margin-right: 15px;
   }
+
+  &.sm-onlyIcon {
+    @media (max-width: 480px) {
+      font-size: 0;
+      place-items: center;
+      padding: 10px;
+
+      svg { margin: 0; }
+    }
+  }
 `;
 
-interface Props {
+interface IProps {
   border?: string;
   color?: string;
+  className?: string;
   bg?: string;
   borderWidth?: number,
   borderColor?: string;
@@ -58,8 +68,9 @@ interface Props {
   fontSize?: string | number;
 }
 
-const Button: FC<Props> = ({
+const Button: FC<IProps> = ({
   border,
+  className,
   color,
   bg,
   borderColor,
@@ -82,14 +93,8 @@ const Button: FC<Props> = ({
       color={color}
       borderColor={borderColor}
       fontSize={fontSize}
-      style={{
-        backgroundColor: bg,
-        color: color,
-        border,
-        borderRadius: radius,
-        height,
-        width
-      }}
+      bg={bg}
+      className={className}
     >
       {children}
     </Btn>

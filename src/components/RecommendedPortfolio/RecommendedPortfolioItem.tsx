@@ -2,13 +2,13 @@ import React, { FC } from "react";
 import styled from "styled-components";
 import theme from "../../theme/theme";
 import CircularProgressBar from "../CircularProgressBar";
-import { ReactComponent as BarChartIcon } from "../../assets/stats.svg";
+import { BarChartIcon } from "../allSVG";
 import Button from "../../components/Button";
 
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  padding: 20px;
+  margin: 20px 0;
 
   > svg { min-width: 70px; }
   span {
@@ -34,7 +34,7 @@ const RecommendedPortfolioItem: FC<IProps> = ({ percent, title = "Title" }) => {
       <ProgressBar progress={percent} />
       <span>{title}</span>
       <Button className="sm-onlyIcon" color={theme.colors.black} bg={theme.colors.gray} fontWeight="bold" fontSize="1.1em">
-        <BarChartIcon />
+        <BarChartIcon width={35} height={35}/>
         View Model
       </Button>
     </Wrapper>

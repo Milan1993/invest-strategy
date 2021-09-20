@@ -1,5 +1,6 @@
 import React, { FC } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import theme from '../theme/theme';
 
 const Btn = styled.button<IProps>`
   display: inline-flex;
@@ -23,18 +24,17 @@ const Btn = styled.button<IProps>`
     cursor: not-allowed;
   }
 
-  &.primary,
-  &:hover {
-    background-color: #566a85;
+  ${props => props.primary ? css`
+    background-color: ${p => theme.colors.primary};
     color: white;
-  }
-
+  `: ''}
+  
   &.secondary {
     border-right: none !important;
   }
 
   svg {
-    width: 35px;
+    min-width: 15px;
     margin-right: 15px;
   }
 
@@ -63,6 +63,7 @@ interface IProps {
   width?: string;
   isPrev?: boolean;
   isNext?: boolean;
+  primary?: boolean;
   disabled?: boolean;
   fontWeight?: string;
   fontSize?: string | number;
@@ -84,16 +85,18 @@ const Button: FC<IProps> = ({
   fontWeight,
   fontSize,
   children,
+  primary
 }) => {
   return (
     <Btn
       onClick={onClick}
-      disabled
+      disabled={disabled}
       fontWeight={fontWeight}
       color={color}
       borderColor={borderColor}
       fontSize={fontSize}
       bg={bg}
+      primary={primary}
       className={className}
     >
       {children}

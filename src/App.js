@@ -10,7 +10,7 @@ import GlobalStyle from './theme/globalStyles';
 import { ThemeProvider } from "styled-components";
 import theme from "./theme/theme";
 import Backdrop from './components/Backdrop';
-import RecommendedPortfolioItem from './components/RecommendedPortfolio/RecommendedPortfolioItem'
+import RecommendedPortfolio from './components/RecommendedPortfolio/RecommendedPortfolio'
 
 function App() {
   return (
@@ -21,7 +21,7 @@ function App() {
         {/* <GoalTypeNew linkText="Retirement"/> */}
         {/* <GoalSettings /> */}
         {/* <Strategy isRecommended blendedStrategies={['Fact-Based Strategies','Market Gaude Strategies']}/> */}
-        <RecommendedPortfolioItem title="Market Gauge Nasdaq 100 All Stars" percent={43.33}/>
+        <RecommendedPortfolio />
         {/* <Backdrop>
         </Backdrop> */}
         {/* <Header /> */}

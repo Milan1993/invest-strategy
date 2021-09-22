@@ -9,6 +9,7 @@ import Header from "./components/Header";
 import GlobalStyle from './theme/globalStyles';
 import { ThemeProvider } from "styled-components";
 import theme from "./theme/theme";
+import Dashboard from './components/Dashboard';
 import Backdrop from './components/Backdrop';
 import RecommendedPortfolio from './components/RecommendedPortfolio/RecommendedPortfolio'
 
@@ -22,6 +23,7 @@ function App() {
         {/* <GoalSettings /> */}
         {/* <Strategy isRecommended blendedStrategies={['Fact-Based Strategies','Market Gaude Strategies']}/> */}
         <RecommendedPortfolio />
+        {/* <Dashboard /> */}
         {/* <Backdrop>
         </Backdrop> */}
         {/* <Header /> */}

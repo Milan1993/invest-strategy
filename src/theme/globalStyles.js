@@ -23,6 +23,10 @@ const GlobalStyle = createGlobalStyle`
 
     input:focus, 
     select:focus { outline: none; }
+
+    button {
+      border: none;
+    }
   }
   
   code {

@@ -20,7 +20,7 @@ const RecommendedPortfolioList: FC<IProps> = ({ data }) => {
       <UL>
         {data.map((item, idx) => (
           <li key={idx}>
-            <RecommendedPortfolioItem title="Market Gauge Nasdaq 100 All Stars" percent={(idx + 1) * 13.33} />
+            <RecommendedPortfolioItem isLoading={true} title="Market Gauge Nasdaq 100 All Stars" percent={(idx + 1) * 13.33} />
           </li>
         ))}
       </UL>

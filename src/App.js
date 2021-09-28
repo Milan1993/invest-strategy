@@ -10,7 +10,7 @@ import GlobalStyle from './theme/globalStyles';
 import { ThemeProvider } from "styled-components";
 import theme from "./theme/theme";
 import Backdrop from './components/Backdrop';
-import RecommendedPortfolio from './components/RecommendedPortfolio/RecommendedPortfolio'
+import Portfolio from './components/PortfolioChart/PortfolioChart';
 
 function App() {
   return (
@@ -18,10 +18,10 @@ function App() {
       <GlobalStyle />
       <div className="App">
         <header className="App-header"></header>
-        {/* <GoalTypeNew linkText="Retirement"/> */}
+        <GoalTypeNew linkText="Retirement"/>
         {/* <GoalSettings /> */}
         {/* <Strategy isRecommended blendedStrategies={['Fact-Based Strategies','Market Gaude Strategies']}/> */}
-        <RecommendedPortfolio />
+        {/* <Portfolio /> */}
         {/* <Backdrop>
         </Backdrop> */}
         {/* <Header /> */}

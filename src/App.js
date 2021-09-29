@@ -1,24 +1,29 @@
 import GoalType from "./components/GoalType";
 import GoalTypes from "./components/GoalTypes";
-import React from 'react';
-import GoalTypeNew from "./components/GoalTypeNew";
-import GoalSettings from "./components/GoalSettings/GoalSettings";
+import React from "react";
+import GoalPickerStep from "./components/GoalPickerStep/GoalPickerStep";
 import Strategy from "./components/Strategy";
 import { Stepper } from "./components/Step/Stepper";
 import Header from "./components/Header";
-import GlobalStyle from './theme/globalStyles';
+import GlobalStyle from "./theme/globalStyles";
 import { ThemeProvider } from "styled-components";
 import theme from "./theme/theme";
-import Backdrop from './components/Backdrop';
-import Portfolio from './components/PortfolioChart/PortfolioChart';
+import Backdrop from "./components/Backdrop";
+import Portfolio from "./components/PortfolioChart/PortfolioChart";
 
 function App() {
+  const goals = [
+    { label: "I don't know yet", path: "/a" },
+    { label: "Retirement", path: "/b" },
+    { label: "Major Purchase", path: "/c" },
+    { label: "Education", path: "/d" },
+  ];
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <div className="App">
         <header className="App-header"></header>
-        <GoalTypeNew linkText="Retirement"/>
+        <GoalPickerStep />
         {/* <GoalSettings /> */}
         {/* <Strategy isRecommended blendedStrategies={['Fact-Based Strategies','Market Gaude Strategies']}/> */}
         {/* <Portfolio /> */}

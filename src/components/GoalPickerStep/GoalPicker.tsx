@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import { NavLink } from "react-router-dom";
-import theme from "../theme/theme";
+import theme from "../../theme/theme";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
+  margin: 40px 0;
+  
   ul {
     margin: 0 auto;
     list-style: none;
@@ -27,7 +29,7 @@ const Wrapper = styled.div`
     white-space: nowrap;
 
     &:hover {
-      background-color: #EBEEF7;
+      background-color: #ebeef7;
       transform: scale(0.95);
     }
   }
@@ -39,7 +41,7 @@ const Wrapper = styled.div`
     top: 5px;
     bottom: 5px;
     left: -100;
-    transition: all .5s ease-in-out;
+    transition: all 0.5s ease-in-out;
     border-radius: 40px;
     width: 0;
     box-sizing: border-box;
@@ -47,14 +49,16 @@ const Wrapper = styled.div`
   }
 `;
 
-const GoalTypeNew = ({ linkText }) => {
+interface IProps {
+  goals: { label: string; path: string }[];
+}
+const GoalPicker: FC<IProps> = ({ goals }) => {
   const [leftOffset, setLeftOffset] = useState(0);
   const [offWidth, setOffWidth] = useState(0);
   const [borderWidth, setBorderWidth] = useState(0);
 
-  const handleClick = (e) => {
-    
-    if (e.target.tagName !== 'A') return;
+  const handleClick = (e: any) => {
+    if (e.target.tagName !== "A") return;
     setLeftOffset(e.target.offsetLeft);
     setOffWidth(e.target.offsetWidth - 5);
     setBorderWidth(2);
@@ -63,10 +67,11 @@ const GoalTypeNew = ({ linkText }) => {
   return (
     <Wrapper>
       <ul onClick={handleClick}>
-        <NavLink to="/a">I don't know yet</NavLink>
-        <NavLink to="/b">Retirement</NavLink>
-        <NavLink to="/c">Major Purchase</NavLink>
-        <NavLink to="/d">Education</NavLink>
+        {goals.map((goal, i) => (
+          <NavLink key={i} to={goal.path}>
+            {goal.label}
+          </NavLink>
+        ))}
         <div
           className="selector"
           style={{
@@ -80,4 +85,4 @@ const GoalTypeNew = ({ linkText }) => {
   );
 };
 
-export default GoalTypeNew;
+export default GoalPicker;
